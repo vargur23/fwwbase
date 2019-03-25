@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+    profiles: dev
+name: Development
+environment: dev 
+server:
+  port: 9080
+---
+spring:
+    profiles: prod
+name: Production
+environment: prod
