@@ -11,6 +11,8 @@ public class RootController {
   @RequestMapping("/")
   public String index() {
     log.info("HI");
+    log.warn("HA");
+    log.error("HU");
       return "Greetings from Spring Boot!";
   }
 }

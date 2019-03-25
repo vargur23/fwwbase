@@ -1,0 +1,30 @@
+Configuration:
+  status: info
+  name: Default
+  Properties:
+    Property:
+      name: log-path
+      value: "logs"
+  
+  appenders:
+    Console:
+      name: std_out
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "%highlight{[%-5level]} %d{yyyy-MM-dd HH:mm:ss.SSS}[%t] %c{1} - %msg%n"
+    File:
+      name: file_out
+      fileName: ${log-path}/root.log
+      PatternLayout:
+        pattern: "%highlight{[%-5level]} %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+  Loggers:
+    Root:
+      level: warn
+      AppenderRef:
+        ref: std_out
+
+    Logger:
+      name: com.vargur.fwwbase
+      level: info
+      AppenderRef:
+        ref: file_out
