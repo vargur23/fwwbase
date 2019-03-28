@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class RootController {
-  private static Logger log = LogManager.getLogger(RootController.class);
+@RequestMapping("")
+public class UnitController {
+  private static Logger log = LogManager.getLogger(UnitController.class);
 
   @Autowired
   PistolsRepository pistolsRepository;
 
-  @RequestMapping("/")
+  @RequestMapping("/unit")
   public String index() {
     log.info("Root");
     return "Greetings from Spring Boot!";

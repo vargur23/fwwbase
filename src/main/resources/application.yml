@@ -1,16 +1,21 @@
 spring:
   profiles:
     active: dev
-    
+
 ---
 spring:
-    profiles: dev
+  profiles: dev
+  data:
+    mongodb:
+      host: 192.168.188.42
+      port: 27017
+      database: fwwbase
 name: Development
-environment: dev 
+environment: dev
 server:
   port: 9080
 ---
 spring:
-    profiles: prod
+  profiles: prod
 name: Production
 environment: prod
